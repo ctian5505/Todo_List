@@ -97,7 +97,7 @@ ul li.checked {
 ul li span {
   position: absolute;
   right: 0;
-  top: 5px;
+  top: 0;
   height: 40px;
   width: 40px;
   font-size: 22px;
@@ -107,6 +107,7 @@ ul li span {
   border-radius: 50%;
 }
 
-ul li span:hover {
-  background-color: #edeef0;
+.remove-btn {
+  font-size: 10px;
+  font-weight: bold;
 }

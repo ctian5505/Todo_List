@@ -24,7 +24,11 @@ function UpdateTaskList() {
 
   task.forEach(function (t, index) {
     const li = document.createElement("li");
+    const deleteBtn = document.createElement("span");
+    deleteBtn.textContent = "X";
+    deleteBtn.classList.add("remove-btn");
     li.textContent = t.task;
+    li.appendChild(deleteBtn);
 
     if (t.status) {
       li.classList.add("checked");
@@ -33,6 +37,10 @@ function UpdateTaskList() {
     li.addEventListener("click", function () {
       t.status = !t.status;
       UpdateTaskList();
+    });
+
+    deleteBtn.addEventListener("click", () => {
+      console.log(`${t.task}`);
     });
 
     listContainer.appendChild(li);
