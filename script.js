@@ -40,7 +40,10 @@ function UpdateTaskList() {
     });
 
     deleteBtn.addEventListener("click", () => {
-      console.log(`${t.task}`);
+      li.remove();
+
+      task.splice(index, 1);
+      UpdateTaskList();
     });
 
     listContainer.appendChild(li);
