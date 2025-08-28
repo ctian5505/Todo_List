@@ -17,7 +17,7 @@ addTaskButton.addEventListener("click", function () {
   const newTask = inputBox.value;
 
   if (newTask === "") {
-    alert("Write Something");
+    return alert("Write Something");
   }
   task.push({ task: newTask, status: false });
   console.log(task); // To remove
