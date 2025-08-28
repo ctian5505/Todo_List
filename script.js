@@ -1,6 +1,9 @@
 const inputBox = document.getElementById("input-box");
 const addTaskButton = document.getElementById("add-task-btn");
 const listContainer = document.getElementById("list-container");
+const finishedTaskContainer = document.getElementById(
+  "finished-task-container"
+);
 
 let task = [];
 
@@ -21,11 +24,12 @@ addTaskButton.addEventListener("click", function () {
 // t = task | stat = status
 function UpdateTaskList() {
   listContainer.innerHTML = "";
+  finishedTaskContainer.innerHTML = "";
 
   task.forEach(function (t, index) {
     const li = document.createElement("li");
     const deleteBtn = document.createElement("span");
-    deleteBtn.textContent = "X";
+    deleteBtn.innerHTML = "&#10005";
     deleteBtn.classList.add("remove-btn");
     li.textContent = t.task;
     li.appendChild(deleteBtn);
@@ -46,6 +50,10 @@ function UpdateTaskList() {
       UpdateTaskList();
     });
 
-    listContainer.appendChild(li);
+    if (!t.status) {
+      listContainer.appendChild(li);
+    } else {
+      finishedTaskContainer.appendChild(li);
+    }
   });
 }

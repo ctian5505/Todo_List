@@ -108,6 +108,10 @@ ul li span {
 }
 
 .remove-btn {
-  font-size: 10px;
+  font-size: 12px;
   font-weight: bold;
+}
+
+.finished-task {
+  margin-top: 50px;
 }
