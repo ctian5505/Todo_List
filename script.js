@@ -53,6 +53,7 @@ function UpdateTaskList() {
       li.remove();
 
       task.splice(index, 1);
+      localStorage.setItem("task", JSON.stringify(task));
       UpdateTaskList();
     });
 
