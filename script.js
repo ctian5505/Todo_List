@@ -7,6 +7,10 @@ const finishedTaskContainer = document.getElementById(
 
 let task = [];
 
+const savedTasks = JSON.parse(localStorage.getItem("task")) || [];
+task = savedTasks;
+UpdateTaskList();
+
 // Retrive Input Task
 
 addTaskButton.addEventListener("click", function () {
@@ -17,6 +21,8 @@ addTaskButton.addEventListener("click", function () {
   }
   task.push({ task: newTask, status: false });
   console.log(task); // To remove
+  localStorage.setItem("task", JSON.stringify(task));
+
   UpdateTaskList();
   inputBox.value = "";
 });
